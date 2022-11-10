@@ -30,6 +30,9 @@
         {
             this.listBox_Klubtagok = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_Delete = new System.Windows.Forms.Button();
+            this.button_Update = new System.Windows.Forms.Button();
+            this.button_insert = new System.Windows.Forms.Button();
             this.numericUpDown_szulev = new System.Windows.Forms.NumericUpDown();
             this.textBox_orszag = new System.Windows.Forms.TextBox();
             this.numericUpDown_iranyitoszam = new System.Windows.Forms.NumericUpDown();
@@ -40,9 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button_insert = new System.Windows.Forms.Button();
-            this.button_Update = new System.Windows.Forms.Button();
-            this.button_Delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_szulev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_iranyitoszam)).BeginInit();
@@ -80,6 +80,35 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiválaszott tagok adatai";
+            // 
+            // button_Delete
+            // 
+            this.button_Delete.Location = new System.Drawing.Point(127, 211);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(217, 56);
+            this.button_Delete.TabIndex = 13;
+            this.button_Delete.Text = "Töröl";
+            this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
+            // 
+            // button_Update
+            // 
+            this.button_Update.Location = new System.Drawing.Point(127, 273);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(217, 56);
+            this.button_Update.TabIndex = 12;
+            this.button_Update.Text = "Módosít";
+            this.button_Update.UseVisualStyleBackColor = true;
+            // 
+            // button_insert
+            // 
+            this.button_insert.Location = new System.Drawing.Point(127, 335);
+            this.button_insert.Name = "button_insert";
+            this.button_insert.Size = new System.Drawing.Size(217, 62);
+            this.button_insert.TabIndex = 11;
+            this.button_insert.Text = "Új tag";
+            this.button_insert.UseVisualStyleBackColor = true;
+            this.button_insert.Click += new System.EventHandler(this.button_insert_Click);
             // 
             // numericUpDown_szulev
             // 
@@ -190,33 +219,6 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Azonosító";
-            // 
-            // button_insert
-            // 
-            this.button_insert.Location = new System.Drawing.Point(127, 335);
-            this.button_insert.Name = "button_insert";
-            this.button_insert.Size = new System.Drawing.Size(217, 62);
-            this.button_insert.TabIndex = 11;
-            this.button_insert.Text = "Új tag";
-            this.button_insert.UseVisualStyleBackColor = true;
-            // 
-            // button_Update
-            // 
-            this.button_Update.Location = new System.Drawing.Point(127, 273);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(217, 56);
-            this.button_Update.TabIndex = 12;
-            this.button_Update.Text = "Módosít";
-            this.button_Update.UseVisualStyleBackColor = true;
-            // 
-            // button_Delete
-            // 
-            this.button_Delete.Location = new System.Drawing.Point(127, 211);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(217, 56);
-            this.button_Delete.TabIndex = 13;
-            this.button_Delete.Text = "Töröl";
-            this.button_Delete.UseVisualStyleBackColor = true;
             // 
             // tagdij
             // 
