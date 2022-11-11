@@ -190,6 +190,66 @@ namespace windowsform
             }
 
         }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            Tagok_Update4();
+            Tagok_Update();
+            
+
+        }
+        private void Tagok_Update4()
+        {
+
+            listBox_Klubtagok.Items.Clear();
+            
+
+            try
+            {
+                if (comboBox_valami.GetItemText=="")
+                {
+                    command.CommandText = $"UPDATE `ugyfel` SET `azon`='{Text_Box_Azon.Text}',`nev`='{Text_Box_Nev.Text}',`szulev`='{numericUpDown_szulev.Value}',`irszam`='{numericUpDown_iranyitoszam.Value}',`orsz`='{textBox_orszag.Text}' WHERE  azon='{textBox_Melyik}'";
+                }
+                else if (comboBox_valami.SelectedValue == "Név")
+                {
+                    command.CommandText = $"UPDATE `ugyfel` SET `azon`='{Text_Box_Azon.Text}',`nev`='{Text_Box_Nev.Text}',`szulev`='{numericUpDown_szulev.Value}',`irszam`='{numericUpDown_iranyitoszam.Value}',`orsz`='{textBox_orszag.Text}' WHERE  nev='{textBox_Melyik}'";
+                }
+                else if (comboBox_valami.SelectedValue == "Ország")
+                {
+                    command.CommandText = $"UPDATE `ugyfel` SET `azon`='{Text_Box_Azon.Text}',`nev`='{Text_Box_Nev.Text}',`szulev`='{numericUpDown_szulev.Value}',`irszam`='{numericUpDown_iranyitoszam.Value}',`orsz`='{textBox_orszag.Text}' WHERE orsz='{textBox_Melyik}'";
+                }
+                else if (comboBox_valami.SelectedValue == "Irányítószám")
+                {
+                    command.CommandText = $"UPDATE `ugyfel` SET `azon`='{Text_Box_Azon.Text}',`nev`='{Text_Box_Nev.Text}',`szulev`='{numericUpDown_szulev.Value}',`irszam`='{numericUpDown_iranyitoszam.Value}',`orsz`='{textBox_orszag.Text}' WHERE irszam='{textBox_Melyik}'";
+                }
+                else if (comboBox_valami.SelectedValue == "Születésiév")
+                {
+                    command.CommandText = $"UPDATE `ugyfel` SET `azon`='{Text_Box_Azon.Text}',`nev`='{Text_Box_Nev.Text}',`szulev`='{numericUpDown_szulev.Value}',`irszam`='{numericUpDown_iranyitoszam.Value}',`orsz`='{textBox_orszag.Text}' WHERE szulev='{textBox_Melyik}'";
+                    
+                }
+
+                using (MySqlDataReader dr = command.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        //-- aktuálisan kiolvasott rekord feldolgozása
+                        Tag beolvasott = new Tag(dr.GetInt32("azon"), dr.GetString("nev"), dr.GetInt32("szulev"), dr.GetString("irszam"), dr.GetString("orsz"));
+
+                        listBox_Klubtagok.Items.Add(beolvasott);
+
+                    }
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+        }
     }
 }
 

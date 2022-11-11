@@ -43,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_valami = new System.Windows.Forms.ComboBox();
+            this.textBox_Melyik = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_szulev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_iranyitoszam)).BeginInit();
@@ -60,6 +62,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox_Melyik);
+            this.groupBox1.Controls.Add(this.comboBox_valami);
             this.groupBox1.Controls.Add(this.button_Delete);
             this.groupBox1.Controls.Add(this.button_Update);
             this.groupBox1.Controls.Add(this.button_insert);
@@ -99,6 +103,7 @@
             this.button_Update.TabIndex = 12;
             this.button_Update.Text = "Módosít";
             this.button_Update.UseVisualStyleBackColor = true;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
             // button_insert
             // 
@@ -220,6 +225,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Azonosító";
             // 
+            // comboBox_valami
+            // 
+            this.comboBox_valami.FormattingEnabled = true;
+            this.comboBox_valami.Items.AddRange(new object[] {
+            "Azonosító",
+            "Név",
+            "Születésiév",
+            "Irányítószám",
+            "Ország"});
+            this.comboBox_valami.Location = new System.Drawing.Point(362, 273);
+            this.comboBox_valami.Name = "comboBox_valami";
+            this.comboBox_valami.Size = new System.Drawing.Size(100, 21);
+            this.comboBox_valami.TabIndex = 14;
+            this.comboBox_valami.Text = "Azonosító";
+            // 
+            // textBox_Melyik
+            // 
+            this.textBox_Melyik.Location = new System.Drawing.Point(362, 300);
+            this.textBox_Melyik.Name = "textBox_Melyik";
+            this.textBox_Melyik.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Melyik.TabIndex = 15;
+            // 
             // tagdij
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +282,8 @@
         private System.Windows.Forms.Button button_insert;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button button_Delete;
+        private System.Windows.Forms.TextBox textBox_Melyik;
+        private System.Windows.Forms.ComboBox comboBox_valami;
     }
 }
 
